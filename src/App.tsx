@@ -9,7 +9,7 @@ export function App() {
       <h1>{greeting("reviewer")}</h1>
       <p>Clicks: {count}</p>
       <button type="button" onClick={() => setCount((value) => value + 1)}>
-        Add click
+        This is a test change
       </button>
     </main>
   );
