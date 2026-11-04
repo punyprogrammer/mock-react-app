@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { nextCount, resetCount } from "./counter";
+import { formatCount } from "./formatCount";
 import { greeting } from "./greeting";
 
 export function App() {
@@ -7,9 +9,12 @@ export function App() {
   return (
     <main>
       <h1>{greeting("reviewer")}</h1>
-      <p>Clicks: {count}</p>
-      <button type="button" onClick={() => setCount((value) => value + 1)}>
-        This is a test change
+      <p>{formatCount(count)}</p>
+      <button type="button" onClick={() => setCount((value) => nextCount(value))}>
+        Add click
+      </button>
+      <button type="button" onClick={() => setCount(resetCount())}>
+        Reset
       </button>
     </main>
   );
