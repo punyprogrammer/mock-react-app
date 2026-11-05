@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { nextCount, resetCount } from "./counter";
 import { formatCount } from "./formatCount";
+import { Directory } from "./Directory";
+import { type Person } from "./directory";
 import { greeting } from "./greeting";
+
+const PEOPLE: Person[] = [
+  { id: "1", name: "Ada", bio: "Counts things", score: 2 },
+  { id: "2", name: "Lin", bio: "Resets counters", score: 5 },
+];
 
 export function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +23,7 @@ export function App() {
       <button type="button" onClick={() => setCount(resetCount())}>
         Reset
       </button>
+      <Directory people={PEOPLE} filter="" />
     </main>
   );
 }
